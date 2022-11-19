@@ -5,11 +5,3 @@ button{
   width: 100%;
 }
 
-.font-title{
-  font-family: 'Montserrat', sans-serif;
-  font-family: 'Oswald', sans-serif;
-  font-family: 'Red Hat Display', sans-serif;
-  font-family: 'Roboto', sans-serif;
-  color: rgb(54, 52, 52);
-  text-transform: uppercase;
-}
