@@ -35,7 +35,7 @@ export class IngresarGastoComponent implements OnInit {
           this.textIncorrecto = "Cantidad ingresada en mayor a restante"
           this.formularioIncorrecto = true;
           console.log(this.cantidad);
-          return  
+          return
       }else{
         this.formularioIncorrecto = false;
         // creamos obejto
@@ -46,6 +46,9 @@ export class IngresarGastoComponent implements OnInit {
 
         // enviamos en objeto a los suscriptores via subject
         this._presupuestoService.agregarGasto(GASTO);
+           // resetear formulario
+           this.nombreGasto = " ";
+           this.cantidad =  0;
       }
 
       }
