@@ -1,12 +1,17 @@
 <h4 class="text-center" >Listado de Gastos</h4>
 <hr>
 <div class="row"  style="margin-top: 40px;">
-    <div class="col col-lg-6 ">
+    <div class="col col-lg-4 ">
       <div class=" alert alert-success sizeAlert">
         Presupuesto: <strong>{{presupuesto}}</strong>
       </div>
     </div>
-    <div class="col col-lg-6">
+    <div class="col col-lg-4">
+      <div class="sizeAlert alert alert-primary">
+        Gastado: <strong>{{presupuesto - restante}}</strong>
+      </div>
+    </div>
+    <div class="col col-lg-4">
       <div class="sizeAlert" [ngClass]="aplicarColorRestante()">
         Restante: <strong>{{restante}}</strong>
       </div>
