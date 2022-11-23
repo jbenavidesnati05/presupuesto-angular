@@ -14,6 +14,8 @@ export class PresupuestoService {
     this.presupuesto =0;
     this.restante =0;
    }
+
+   // creando observable
    agregarGasto(gasto:any){
     this.restante = this.restante - gasto.cantidad;
     this.gastos$.next(gasto);
@@ -22,5 +24,5 @@ export class PresupuestoService {
    getGastos():Observable<any> {
     return this.gastos$.asObservable();
    }
-
+    // creando observable
 }

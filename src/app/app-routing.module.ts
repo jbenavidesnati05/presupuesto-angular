@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: '',redirectTo:'/ingresarPresupuesto', pathMatch: 'full'},
   {path: 'ingresarPresupuesto', component: IngresarPresupuestoComponent},
   {path: 'gastos', component:GastosComponent},
-  // redirecciona siempre a ingresar presupuesto
+  // redirecciona siempre a ingresar presupuesto " debe estar al final"
   {path: '**',redirectTo:'/ingresarPresupuesto', pathMatch: 'full'},
 ];
 

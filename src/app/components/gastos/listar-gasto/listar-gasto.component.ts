@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { PresupuestoService } from 'src/app/service/presupuesto.service';
 
 @Component({
@@ -13,6 +13,8 @@ export class ListarGastoComponent implements OnInit, OnDestroy {
   restante:number;
   listGastos:any[] =[];
 
+
+// llamando Observable 
   constructor(private _presupuestoService:PresupuestoService ) {
     this.presupuesto  = 0;
     this.restante     = 0;

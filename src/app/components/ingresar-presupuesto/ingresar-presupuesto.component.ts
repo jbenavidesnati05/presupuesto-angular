@@ -21,6 +21,7 @@ export class IngresarPresupuestoComponent implements OnInit {
    }
 
    agregar(){
+
       if (this.cantidad>0) {
         this.cantidadIncorrecta =false;
         this._presupuestoService.presupuesto = this.cantidad;

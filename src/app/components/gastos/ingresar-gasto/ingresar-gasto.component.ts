@@ -23,24 +23,21 @@ export class IngresarGastoComponent implements OnInit {
     ngOnInit(): void {
     }
     agregarGasto() {
-
-
-      // validacion cuando el gasto es mayor al restante
-      if (this.cantidad > this._presupuestoService.restante) {
-        this.formularioIncorrecto = true;
-        this.textIncorrecto = "Cantidad ingresada en mayor a restante"
-        console.log(this.cantidad);
-        return
-      }
       // validacion cuando los campos son vacios
-      if (this.nombreGasto === " " || this.cantidad <=0) {
+      if (this.nombreGasto == " " || this.cantidad <=0) {
         this.formularioIncorrecto = true;
-        this.textIncorrecto = "Cantidad ingresada en mayor a restante";
+        this.textIncorrecto = " Nombre gasto vacio o cantidad menor o igual a cero ";
+        // resetear formulario
+        this.nombreGasto = " ";
+        this.cantidad =  0;
+        // validacion cuando el gasto es mayor al restante
+        }else if(this.cantidad > this._presupuestoService.restante ){
+          this.textIncorrecto = "Cantidad ingresada en mayor a restante"
+          this.formularioIncorrecto = true;
+          console.log(this.cantidad);
+          return  
       }else{
-
-
-      }
-
+        this.formularioIncorrecto = false;
         // creamos obejto
         const GASTO ={
           nombre: this.nombreGasto,
@@ -49,11 +46,8 @@ export class IngresarGastoComponent implements OnInit {
 
         // enviamos en objeto a los suscriptores via subject
         this._presupuestoService.agregarGasto(GASTO);
+      }
 
-        // resetear formulario
-        this.formularioIncorrecto = false;
-        this.nombreGasto = " ";
-        this.cantidad = 0;
       }
   }
 
